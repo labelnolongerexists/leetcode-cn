@@ -3,16 +3,22 @@ package com.hhrb.leetcodecn.tool;
 /**
  * User: Z J Wu Date: 2020/1/26 Time: 17:50 Package: com.hhrb.leetcodecn.tool
  */
-public class Stack {
+public class Stack<T> {
 
-  private LinkedListNode head;
+  private LinkedListNode<T> head;
 
-  public void push(LinkedListNode linkedListNode) {
+  public void push(LinkedListNode<T> linkedListNode) {
     linkedListNode.next = head;
     this.head = linkedListNode;
   }
 
-  public LinkedListNode pop() {
+  public void push(T t) {
+    LinkedListNode<T> linkedListNode = new LinkedListNode<>(t);
+    linkedListNode.next = head;
+    this.head = linkedListNode;
+  }
+
+  public LinkedListNode<T> pop() {
     LinkedListNode head = this.head;
     if (head == null) {
       return null;
@@ -22,11 +28,11 @@ public class Stack {
     return head;
   }
 
-  public LinkedListNode getHead() {
+  public LinkedListNode<T> getHead() {
     return this.head;
   }
 
-  public LinkedListNode clear() {
+  public LinkedListNode<T> clear() {
     LinkedListNode head = getHead();
     this.head = null;
     return head;

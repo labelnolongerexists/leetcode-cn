@@ -1,4 +1,4 @@
-package com.hhrb.leetcodecn;
+package com.hhrb.leetcodecn.lc;
 
 import com.hhrb.leetcodecn.tool.LinkedListNode;
 import com.hhrb.leetcodecn.tool.Stack;

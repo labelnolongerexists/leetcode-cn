@@ -6,7 +6,7 @@ import java.util.StringJoiner;
 /**
  * User: Z J Wu Date: 2020/1/25 Time: 19:14 Package: com.hhrb.leetcodecn
  */
-public class LinkedListNode {
+public class LinkedListNode<T> {
 
   public static final Random RANDOM = new Random();
 
@@ -25,7 +25,7 @@ public class LinkedListNode {
     return sb.toString();
   }
 
-  public static final LinkedListNode randomListNodes(int count) {
+  public static final LinkedListNode<Integer> randomListNodes(int count) {
     LinkedListNode vHead = new LinkedListNode(0), current = vHead;
     for (int i = 0; i < count; i++) {
       int value = RANDOM.nextInt(100);
@@ -36,7 +36,7 @@ public class LinkedListNode {
     return vHead.next;
   }
 
-  public static final LinkedListNode serialListNodes(int count) {
+  public static final LinkedListNode<Integer> serialListNodes(int count) {
     LinkedListNode vHead = new LinkedListNode(0), current = vHead;
     for (int i = 0; i < count; i++) {
       LinkedListNode newNode = new LinkedListNode(i + 1);
@@ -46,10 +46,10 @@ public class LinkedListNode {
     return vHead.next;
   }
 
-  public int val;
+  public T val;
   public LinkedListNode next;
 
-  public LinkedListNode(int x) {
+  public LinkedListNode(T x) {
     val = x;
   }
 
