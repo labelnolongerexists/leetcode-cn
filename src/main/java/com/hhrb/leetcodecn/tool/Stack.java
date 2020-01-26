@@ -28,8 +28,17 @@ public class Stack<T> {
     return head;
   }
 
+  public T popValue() {
+    LinkedListNode<T> node = pop();
+    return node == null ? null : node.val;
+  }
+
   public LinkedListNode<T> getHead() {
     return this.head;
+  }
+
+  public T getHeadValue() {
+    return this.head == null ? null : this.head.val;
   }
 
   public LinkedListNode<T> clear() {
