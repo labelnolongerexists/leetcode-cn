@@ -5,35 +5,29 @@ package com.hhrb.leetcodecn.tool;
  */
 public class Stack {
 
-  private ListNode head;
+  private LinkedListNode head;
 
-  public void push(int val) {
-    ListNode listNode = new ListNode(val);
-    listNode.next = head;
-    this.head = listNode;
+  public void push(LinkedListNode linkedListNode) {
+    linkedListNode.next = head;
+    this.head = linkedListNode;
   }
 
-  public void push(ListNode listNode) {
-    listNode.next = head;
-    this.head = listNode;
-  }
-
-  public ListNode pop() {
-    ListNode head = this.head;
+  public LinkedListNode pop() {
+    LinkedListNode head = this.head;
     if (head == null) {
       return null;
     }
-    ListNode next = head.next;
+    LinkedListNode next = head.next;
     this.head = next;
     return head;
   }
 
-  public ListNode getHead() {
+  public LinkedListNode getHead() {
     return this.head;
   }
 
-  public ListNode clear() {
-    ListNode head = getHead();
+  public LinkedListNode clear() {
+    LinkedListNode head = getHead();
     this.head = null;
     return head;
   }

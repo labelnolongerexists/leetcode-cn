@@ -1,6 +1,6 @@
 package com.hhrb.leetcodecn;
 
-import com.hhrb.leetcodecn.tool.ListNode;
+import com.hhrb.leetcodecn.tool.LinkedListNode;
 import com.hhrb.leetcodecn.tool.Stack;
 
 /**
@@ -13,8 +13,8 @@ public class LC25 {
   }
 
   // 翻轉鏈錶
-  public static final ListNode reverseNode(ListNode node) {
-    ListNode next, previous = null, current = node;
+  public static final LinkedListNode reverseNode(LinkedListNode node) {
+    LinkedListNode next, previous = null, current = node;
     while (current != null) {
       next = current.next;
       current.next = previous;
@@ -24,13 +24,13 @@ public class LC25 {
     return previous;
   }
 
-  public static final ListNode reverseNodesInKGroup(ListNode head, final int k) {
-    ListNode vHead = new ListNode(0);
+  public static final LinkedListNode reverseNodesInKGroup(LinkedListNode head, final int k) {
+    LinkedListNode vHead = new LinkedListNode(0);
 
     int counter = resetCounter();
-    ListNode current = head, nextOfGroup, previousOfGroup = null;
+    LinkedListNode current = head, nextOfGroup, previousOfGroup = null;
     vHead.next = head;
-    ListNode next, previous = null;
+    LinkedListNode next, previous = null;
     Stack stack = new Stack();
     for (; ; ) {
       if (current == null) {
@@ -43,19 +43,17 @@ public class LC25 {
 
       if (counter == 1) {
         previousOfGroup = previous;
-      } else if (counter < k) {
-
-      } else {
+      } else if (counter == k) {
         nextOfGroup = next;
-        ListNode headOfStack = stack.getHead();
+        LinkedListNode headOfStack = stack.getHead();
         if (previousOfGroup == null) {
           vHead.next = headOfStack;
         } else {
           previousOfGroup.next = headOfStack;
         }
-        ListNode lastOfStack;
+        LinkedListNode lastOfStack;
         while (true) {
-          ListNode poped = stack.pop();
+          LinkedListNode poped = stack.pop();
           if (poped.next == null) {
             lastOfStack = poped;
             break;
@@ -74,12 +72,12 @@ public class LC25 {
   }
 
   public static void main(String[] args) {
-    ListNode head;
-    head = ListNode.serialListNodes(10);
-    System.out.println(ListNode.list2String(head));
-    System.out.println(ListNode.list2String(reverseNode(head)));
+    LinkedListNode head;
+    head = LinkedListNode.serialListNodes(10);
+    System.out.println(LinkedListNode.list2String(head));
+    System.out.println(LinkedListNode.list2String(reverseNode(head)));
 
-    head = ListNode.serialListNodes(10);
-    System.out.println(ListNode.list2String(reverseNodesInKGroup(head, 3)));
+    head = LinkedListNode.serialListNodes(10);
+    System.out.println(LinkedListNode.list2String(reverseNodesInKGroup(head, 3)));
   }
 }

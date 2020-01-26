@@ -6,13 +6,13 @@ import java.util.StringJoiner;
 /**
  * User: Z J Wu Date: 2020/1/25 Time: 19:14 Package: com.hhrb.leetcodecn
  */
-public class ListNode {
+public class LinkedListNode {
 
   public static final Random RANDOM = new Random();
 
-  public static final String list2String(ListNode node) {
+  public static final String list2String(LinkedListNode node) {
     StringBuilder sb = new StringBuilder();
-    ListNode current = node;
+    LinkedListNode current = node;
     for (; ; ) {
       sb.append(current.val);
       if (current.next == null) {
@@ -25,21 +25,21 @@ public class ListNode {
     return sb.toString();
   }
 
-  public static final ListNode randomListNodes(int count) {
-    ListNode vHead = new ListNode(0), current = vHead;
+  public static final LinkedListNode randomListNodes(int count) {
+    LinkedListNode vHead = new LinkedListNode(0), current = vHead;
     for (int i = 0; i < count; i++) {
       int value = RANDOM.nextInt(100);
-      ListNode newNode = new ListNode(value);
+      LinkedListNode newNode = new LinkedListNode(value);
       current.next = newNode;
       current = newNode;
     }
     return vHead.next;
   }
 
-  public static final ListNode serialListNodes(int count) {
-    ListNode vHead = new ListNode(0), current = vHead;
+  public static final LinkedListNode serialListNodes(int count) {
+    LinkedListNode vHead = new LinkedListNode(0), current = vHead;
     for (int i = 0; i < count; i++) {
-      ListNode newNode = new ListNode(i + 1);
+      LinkedListNode newNode = new LinkedListNode(i + 1);
       current.next = newNode;
       current = newNode;
     }
@@ -47,9 +47,9 @@ public class ListNode {
   }
 
   public int val;
-  public ListNode next;
+  public LinkedListNode next;
 
-  public ListNode(int x) {
+  public LinkedListNode(int x) {
     val = x;
   }
 
