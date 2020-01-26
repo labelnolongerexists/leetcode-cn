@@ -34,13 +34,12 @@ public class Wildcard {
 
     int counter=0;
     while (sIdx < s.length()) {
-
+      System.out.println("---------------------------------");
       System.out.println("Round - "+counter);
       System.out.println("PatternCharIdx - " + pIdx);
       System.out.println("StringCharIdx - " + sIdx);
       System.out.println("StarIdx - " + starIdx);
       System.out.println("StarMatchStrIdx - " + starMatchIdx);
-      System.out.println("---------------------------------");
 
       // 1. 最简单的情况, p和s完全相等, 或者p是?, 匹配任意1个s
       if (pIdx < pLen && (p.charAt(pIdx) == s.charAt(sIdx) || p.charAt(pIdx) == ANYTHING_1)) {
@@ -83,6 +82,7 @@ public class Wildcard {
       ++pIdx;
     }
     // p恰巧消耗完, 不多不少, 说明匹配成功
+    System.out.println("---------------------------------");
     return pIdx == pLen;
   }
 
