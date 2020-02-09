@@ -7,6 +7,14 @@ public class Stack<T> {
 
   private LinkedListNode<T> head;
 
+  public boolean isEmpty() {
+    return this.head == null;
+  }
+
+  public boolean isNotEmpty() {
+    return !isEmpty();
+  }
+
   public void push(LinkedListNode<T> linkedListNode) {
     linkedListNode.next = head;
     this.head = linkedListNode;
