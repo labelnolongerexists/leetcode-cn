@@ -1,2 +1,8 @@
 .idea
 leetcode-cn.iml
+target
+.classpath
+.project
+*.gitignore
+*.class
+org.eclipse*
