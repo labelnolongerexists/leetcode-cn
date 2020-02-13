@@ -1,4 +1,4 @@
-package com.hhrb.leetcodecn;
+package com.hhrb.leetcodecn.oldlc;
 
 import java.util.Arrays;
 

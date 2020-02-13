@@ -1,4 +1,4 @@
-package com.hhrb.leetcodecn;
+package com.hhrb.leetcodecn.oldlc;
 
 /**
  * User: Z J Wu Date: 2019/2/6 Time: 21:04 Package: com.hhrb.leetcodecn
